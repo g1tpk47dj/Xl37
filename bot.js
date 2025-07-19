@@ -2,7 +2,7 @@
 const { Telegraf } = require('telegraf');
 
 // Ganti dengan token kamu
-const bot = new Telegraf('ISI_TOKEN_BOT_DI_SINI');
+const bot = new Telegraf('7876140054:AAHCKPQhL2ptHbiAKCKK_HuBSUFgBfDd96I');
 
 bot.start((ctx) => {
   ctx.reply('Halo! Aku adalah bot Telegram kamu 👋');
