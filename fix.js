@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function detectLocation(auto = false) {
   const input = document.getElementById("locationInput");
-  const btnText = document.getElementById("detectBtnText");
+  const detectBtn = document.getElementById("detectBtn");
   const statusText = document.getElementById("statusText");
 
   if (!navigator.geolocation) {
@@ -20,7 +20,7 @@ function detectLocation(auto = false) {
     return;
   }
 
-  if (btnText) btnText.textContent = "Mendeteksi...";
+  if (detectBtn) detectBtn.innerText = "Mendeteksi...";
   if (statusText) statusText.textContent = "Mendeteksi...";
 
   navigator.geolocation.getCurrentPosition(
@@ -28,12 +28,12 @@ function detectLocation(auto = false) {
       const lat = pos.coords.latitude.toFixed(6);
       const lon = pos.coords.longitude.toFixed(6);
       if (input) input.value = `${lat}, ${lon}`;
-      if (btnText) btnText.textContent = "Deteksi GPS";
+      if (detectBtn) detectBtn.innerText = "Deteksi GPS";
       if (statusText) statusText.textContent = "Ready";
     },
     err => {
       if (input && !auto) input.value = "Gagal: " + err.message;
-      if (btnText) btnText.textContent = "Deteksi GPS";
+      if (detectBtn) detectBtn.innerText = "Deteksi GPS";
       if (statusText) statusText.textContent = "Ready";
     },
     { enableHighAccuracy: false, timeout: 8000, maximumAge: 60000 }
