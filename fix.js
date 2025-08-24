@@ -1,4 +1,3 @@
-// fix.js
 window.addEventListener("error", function (e) {
   console.error("JS Error:", e.message);
   return true;
