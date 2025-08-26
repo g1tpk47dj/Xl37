@@ -88,7 +88,7 @@ function createInstallBanner() {
 
     
     const originalText = btnInstall.textContent;
-    btnInstall.textContent = "Memproses..";
+    btnInstall.textContent = "Proses..";
     btnInstall.style.opacity = "0.85";
     btnInstall.style.cursor = "wait";
     btnInstall.disabled = true;
